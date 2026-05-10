@@ -1,67 +1,89 @@
-# 🛍️ Shopilo — Professional React E-Commerce
+# Shopilo
 
-A full-featured e-commerce app built with **React 18**, **React Router v6**, and the free **DummyJSON API**. No backend  — everything runs in the browser.
+A modern e-commerce storefront built with React 18 and React Router v6. The app consumes the DummyJSON API to serve real product data and runs entirely in the browser — no backend or server setup required.
 
-## ✨ Features
+---
 
-| Feature | Technical Skill |
+## Features
+
+- **Multi-page navigation** — Client-side routing with React Router v6 (`useNavigate`, `useParams`, nested routes)
+- **Persistent shopping cart** — Global cart state managed via Context API and `useReducer`, saved to `localStorage` between sessions
+- **Wishlist** — Mirrors the cart architecture; items survive page refreshes
+- **Live product search** — Debounced input hook prevents unnecessary API calls while the user types
+- **Category filtering** — Filters are reflected in the URL via Search Params, making results shareable and bookmarkable
+- **Sorting & pagination** — Client-side derived state with `useMemo` for performance-conscious rendering
+- **Loading skeletons** — Shimmer placeholders shown during data fetches to avoid layout shifts
+- **Toast notifications** — Lightweight custom context with auto-dismiss timers; no third-party library
+- **Coupon code support** — Discount logic handled in local state at checkout
+- **Fully responsive** — CSS Grid and media queries, tested on mobile, tablet, and desktop
+
+---
+
+## Tech Stack
+
+| Layer | Choice |
 |---|---|
-| Multi-page navigation | React Router v6, `useNavigate`, `useParams` |
-| Global cart with persistence | Context API + `useReducer` + `localStorage` |
-| Wishlist | Context API (same pattern, reusable) |
-| Real product data | `fetch`, custom hooks, async/await |
-| Search with debounce | `useDebounce` hook, prevents API spam |
-| Filter by category | URL Search Params (shareable URLs) |
-| Sort products | `useMemo` for performance |
-| Pagination | Client-side derived state |
-| Loading skeletons | CSS shimmer animation |
-| Toast notifications | Custom Context + auto-dismiss |
-| Coupon codes | Local state logic |
-| Responsive design | CSS Grid, media queries |
+| UI Library | React 18 |
+| Bundler | Vite |
+| Routing | React Router v6 |
+| Styling | CSS Modules + Tailwind CSS |
+| Fonts | Cormorant Garamond, Syne (Google Fonts) |
+| Data | DummyJSON REST API |
+| State | Context API + useReducer |
 
-## 🗂️ Project Structure
+No external UI component libraries are used — every component was written from scratch.
+
+---
+
+## Project Structure
 
 ```
 src/
-├── components/       # Reusable UI (Navbar, ProductCard, etc.)
-├── pages/            # Full pages (Home, Shop, ProductDetail, Cart, Wishlist)
-├── context/          # Global state (CartContext, WishlistContext)
-├── hooks/            # Custom hooks (useProducts, useDebounce)
-└── utils/            # Pure helper functions
+├── components/     # Shared UI components (Navbar, ProductCard, Skeleton, Toast, …)
+├── pages/          # Route-level views (Home, Shop, ProductDetail, Cart, Wishlist)
+├── context/        # Global state providers (CartContext, WishlistContext, ToastContext)
+├── hooks/          # Custom hooks (useProducts, useDebounce)
+└── utils/          # Pure utility functions (formatPrice, couponValidator, …)
 ```
 
-## 🚀 Quick Start
+---
+
+## Getting Started
+
+**Prerequisites:** Node.js 18+ and npm.
 
 ```bash
-# 1. Install dependencies
+# Install dependencies
 npm install
 
-# 2. Run development server
+# Start the development server
 npm run dev
 
-# 3. Build for production
+# Build for production
 npm run build
+
+# Preview the production build locally
+npm run preview
 ```
 
-```
+The dev server runs at `http://localhost:5173` by default.
 
-## 🔌 API
+---
 
-Uses [DummyJSON](https://dummyjson.com/docs/products) — completely free, no API key required.
+## API Reference
 
-Key endpoints used:
-- `GET /products` — all products
-- `GET /products/{id}` — single product with reviews
-- `GET /products/search?q=` — search
-- `GET /products/categories` — category list
-- `GET /products/category/{name}` — filter by category
+All data comes from [DummyJSON](https://dummyjson.com/docs/products) — free to use, no API key or account required.
 
+| Endpoint | Used for |
+|---|---|
+| `GET /products` | Product listing page |
+| `GET /products/:id` | Product detail & reviews |
+| `GET /products/search?q=` | Search results |
+| `GET /products/categories` | Category navigation |
+| `GET /products/category/:name` | Category filter pages |
 
+---
 
-## 🎨 Tech Stack
+## License
 
-- **React 18** + Vite
-- **React Router v6**
-- **CSS Modules** (scoped styles, no clashes)
-- **Google Fonts** (Cormorant Garamond + Syne)
-- Zero external UI libraries — built from scratch
+MIT
