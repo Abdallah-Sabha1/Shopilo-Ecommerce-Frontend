@@ -32,13 +32,13 @@ Behind that experience is a deliberately lightweight React architecture powered 
 
 ### Editorial Home Experience
 
-![Shopilo home experience](screenshots/home-hero.png)
+![Shopilo home experience](screenshots/home-hero-hd.png)
 
 A responsive split-layout hero introduces seasonal collections through bold typography, campaign photography, navigation shortcuts, animated slides, and clear calls to action.
 
 ### Curated Product Discovery
 
-![Featured products](screenshots/featured-products.png)
+![Featured products](screenshots/featured-products-hd.png)
 
 Featured products, collection campaigns, category discovery, promotional messaging, and service guarantees create a convincing retail journey beyond a standard product grid.
 
@@ -48,25 +48,25 @@ Featured products, collection campaigns, category discovery, promotional messagi
 
 ### Searchable Product Catalog
 
-![Product catalog](screenshots/product-catalog.png)
+![Product catalog](screenshots/product-catalog-hd.png)
 
 Shoppers can explore the catalog with debounced search, category filters, price ranges, multiple sorting modes, shareable URL parameters, and client-side pagination.
 
 ### Detailed Product Pages
 
-![Product detail page](screenshots/product-detail.png)
+![Product detail page](screenshots/product-detail-hd.png)
 
 Each product page combines imagery, pricing and discounts, stock status, quantity controls, tags, customer reviews, related recommendations, recently viewed products, and direct cart or wishlist actions.
 
 ### Persistent Wishlist
 
-![Wishlist](screenshots/wishlist.png)
+![Wishlist](screenshots/wishlist-hd.png)
 
 Saved items remain available across sessions through a dedicated Context API state layer synchronized with browser storage.
 
 ### Smart Shopping Cart
 
-![Shopping cart](screenshots/shopping-cart.png)
+![Shopping cart](screenshots/shopping-cart-hd.png)
 
 The cart supports quantity controls, item removal, dynamic totals, free-shipping thresholds, coupon validation, discount calculations, and a simulated order confirmation flow.
 
