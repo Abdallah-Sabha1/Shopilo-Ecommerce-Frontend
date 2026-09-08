@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/shopilo-readme-logo.png" alt="Shopilo — premium fashion and lifestyle ecommerce" width="760" />
+
 # Shopilo — شوبيلو
 
 ### Curated style. Effortless shopping.
